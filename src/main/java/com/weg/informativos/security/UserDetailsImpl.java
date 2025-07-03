@@ -1,7 +1,7 @@
 package com.weg.informativos.security;
 
+import com.weg.informativos.modulos.usuario.dominio.UsuarioEntidade;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
@@ -9,24 +9,24 @@ import java.util.List;
 
 public class UserDetailsImpl implements UserDetails {
 
-    private final User user;
+    private final UsuarioEntidade usuario;
 
-    public UserDetailsImpl(User user) {
-        this.user = user;
+    public UserDetailsImpl(UsuarioEntidade usuario) {
+        this.usuario = usuario;
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of();
+        return List.of(usuario.getTipoUsuario());
     }
 
     @Override
     public String getPassword() {
-        return user.getPassword();
+        return usuario.getSenha();
     }
 
     @Override
     public String getUsername() {
-        return user.getUsername();
+        return usuario.getNome();
     }
 }
