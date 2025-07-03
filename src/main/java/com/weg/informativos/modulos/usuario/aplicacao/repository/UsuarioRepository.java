@@ -1,4 +1,4 @@
-package com.weg.informativos.modulos.usuario.aplicacao.repositorio;
+package com.weg.informativos.modulos.usuario.aplicacao.repository;
 
 import com.weg.informativos.modulos.usuario.dominio.UsuarioEntidade;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -8,7 +8,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Repository
-public interface UsuarioRepositorio extends JpaRepository<UsuarioEntidade, UUID> {
+public interface UsuarioRepository extends JpaRepository<UsuarioEntidade, UUID> {
 
     public Optional<UsuarioEntidade> findByEmail(String email);
 
