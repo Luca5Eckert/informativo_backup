@@ -33,7 +33,7 @@ public class UsuarioController {
         return ResponseEntity.ok(new RespostaDto<TokenDto>("Login realizado com sucesso","LOGIN_REALIZADO", HttpStatus.ACCEPTED.value(), token));
     }
 
-    @PostMapping(value = "/api/usuario/login")
+    @PostMapping(value = "/api/usuario/cadastro")
     public ResponseEntity<RespostaDto<TokenDto>> fazerCadastro(@RequestBody @Valid UsuarioCadastroDto usuarioCadastroDto){
         usuarioCadastroCase.executar(usuarioCadastroDto);
 

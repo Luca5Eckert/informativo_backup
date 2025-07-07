@@ -15,6 +15,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
+
+//configura rotas de acesso a endpoints
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
@@ -35,7 +37,8 @@ public class SecurityConfig {
                         .authenticated().anyRequest().permitAll())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 
-                .addFilterBefore(jwtAuthenticationFilter, BasicAuthenticationFilter.class).build();
+                .addFilterBefore(jwtAuthenticationFilter, BasicAuthenticationFilter.class)
+                .build();
     }
 
     @Bean
