@@ -24,7 +24,6 @@ public class JwtTokenProvider {
 
     /**
      * Gera um token de jwt com o email do usuário
-     *
      * @param email nome do usuario
      * @return token gerado com o nome
      */
@@ -43,7 +42,6 @@ public class JwtTokenProvider {
 
     /**
      * Extrai o email inserido no token
-     *
      * @param token recebe o token do usuário
      * @return retorna o email do usuario no token
      */
@@ -64,7 +62,6 @@ public class JwtTokenProvider {
      * @param userDetails usuario buscado do banco de dados
      * @return retorna uma booleana verdadeira caso token seja valido
      */
-
     public boolean validateToken(String token, UserDetailsImpl userDetails) {
         token = token.replace("Bearer ", "");
 
