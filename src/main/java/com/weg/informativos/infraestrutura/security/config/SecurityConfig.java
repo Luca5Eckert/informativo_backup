@@ -1,5 +1,6 @@
-package com.weg.informativos.security;
+package com.weg.informativos.infraestrutura.security.config;
 
+import com.weg.informativos.security.filters.SecurityUserFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,4 @@
-package com.weg.informativos.providers;
+package com.weg.informativos.infraestrutura.providers;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 
 @Service
-public class JWTUserProvider {
+public class JwtTokenProvider {
 
     @Value("${security.jwt.secret}")
     private String secretKey;

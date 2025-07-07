@@ -1,6 +1,6 @@
 package com.weg.informativos.modulos.usuario.aplicacao.controllers;
 
-import com.weg.informativos.modulos.resposta.RespostaDto;
+import com.weg.informativos.core.dtos.RespostaDto;
 import com.weg.informativos.modulos.usuario.aplicacao.dtos.UsuarioLoginDto;
 import com.weg.informativos.modulos.usuario.dominio.cases.UsuarioLoginCase;
 import jakarta.validation.Valid;

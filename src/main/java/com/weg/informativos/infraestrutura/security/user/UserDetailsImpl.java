@@ -1,4 +1,4 @@
-package com.weg.informativos.security;
+package com.weg.informativos.infraestrutura.security.user;
 
 import com.weg.informativos.modulos.usuario.dominio.UsuarioEntidade;
 import org.springframework.security.core.GrantedAuthority;
