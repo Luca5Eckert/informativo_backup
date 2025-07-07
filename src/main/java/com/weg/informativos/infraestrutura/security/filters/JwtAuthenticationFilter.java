@@ -1,6 +1,7 @@
 package com.weg.informativos.infraestrutura.security.filters;
 
 import com.weg.informativos.infraestrutura.providers.JwtTokenProvider;
+import com.weg.informativos.infraestrutura.security.user.UserDetailsImpl;
 import com.weg.informativos.infraestrutura.security.user.UserDetailsServiceImpl;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -40,10 +41,10 @@ public class JwtAuthenticationFilter  extends OncePerRequestFilter {
             }
 
             final String jwt = authHeader.substring(7);
-            final String username = jwtTokenProvider.extractUsername(jwt);
+            final String username = jwtTokenProvider.extractEmail(jwt);
 
             if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
-                UserDetails userDetails = userDetailsService.loadUserByUsername(username);
+                UserDetailsImpl userDetails = userDetailsService.loadUserByUsername(username);
 
                 if (jwtTokenProvider.validateToken(jwt, userDetails)) {
                     UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(userDetails,

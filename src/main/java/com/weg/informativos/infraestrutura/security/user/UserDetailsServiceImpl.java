@@ -2,7 +2,6 @@ package com.weg.informativos.infraestrutura.security.user;
 
 import com.weg.informativos.modulos.usuario.aplicacao.repository.UsuarioRepository;
 import com.weg.informativos.modulos.usuario.dominio.UsuarioEntidade;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
@@ -15,7 +14,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     }
 
     @Override
-    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+    public UserDetailsImpl loadUserByUsername(String email) throws UsernameNotFoundException {
         UsuarioEntidade userFound = usuarioRepository.findByEmail(email).orElseThrow(() -> new UsernameNotFoundException("O usuário não foi encontrado"));
         return new UserDetailsImpl(userFound);
     }

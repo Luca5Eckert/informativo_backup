@@ -29,4 +29,9 @@ public class UserDetailsImpl implements UserDetails {
     public String getUsername() {
         return usuario.getNome();
     }
+
+    public String getEmail() {
+        return usuario.getEmail();
+    }
+
 }
