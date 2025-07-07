@@ -11,7 +11,6 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "usuario_tb")
-@AllArgsConstructor
 @NoArgsConstructor(force = true)
 public class UsuarioEntidade {
 

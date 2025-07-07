@@ -1,5 +1,6 @@
 package com.weg.informativos.modulos.usuario.dominio.cases;
 
+import com.weg.informativos.core.dtos.TokenDto;
 import com.weg.informativos.modulos.usuario.aplicacao.dtos.UsuarioLoginDto;
 import com.weg.informativos.modulos.usuario.aplicacao.repository.UsuarioRepository;
 import org.springframework.stereotype.Service;
@@ -13,8 +14,8 @@ public class UsuarioLoginCase {
         this.usuarioRepository = usuarioRepository;
     }
 
-    public void executar(UsuarioLoginDto userUsuarioLoginDto){
-
+    public TokenDto executar(UsuarioLoginDto userUsuarioLoginDto){
+        return null;
     }
 
 }
