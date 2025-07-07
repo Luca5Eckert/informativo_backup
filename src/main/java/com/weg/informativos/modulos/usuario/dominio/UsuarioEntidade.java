@@ -39,6 +39,16 @@ public class UsuarioEntidade {
         this.atualizadoEm = atualizadoEm;
     }
 
+    public UsuarioEntidade(String nome, String email, String senha, TipoUsuario tipoUsuario) {
+        this.id = null;
+        this.nome = nome;
+        this.email = email;
+        this.senha = senha;
+        this.tipoUsuario = tipoUsuario;
+        this.criadoEm = LocalDateTime.now();
+        this.atualizadoEm = LocalDateTime.now();
+    }
+
     public UUID getId() {
         return id;
     }

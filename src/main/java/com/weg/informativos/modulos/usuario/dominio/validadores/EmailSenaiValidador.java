@@ -1,8 +1,6 @@
-package com.weg.informativos.modulos.usuario.aplicacao.validadores;
+package com.weg.informativos.modulos.usuario.dominio.validadores;
 
-import javax.xml.validation.ValidatorHandler;
-
-import com.weg.informativos.modulos.usuario.aplicacao.anotacoes.EmailSenai;
+import com.weg.informativos.modulos.usuario.dominio.anotacoes.EmailSenai;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 
