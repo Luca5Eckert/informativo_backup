@@ -33,8 +33,8 @@ public class SecurityConfig {
         return http.
                 csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(
-                        auth -> auth.requestMatchers("/login", "/cadastro")
-                        .authenticated().anyRequest().permitAll())
+                        auth -> auth.requestMatchers("/api/usuario/login", "/api/usuario/cadastro")
+                                .permitAll().anyRequest().authenticated())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 
                 .addFilterBefore(jwtAuthenticationFilter, BasicAuthenticationFilter.class)
