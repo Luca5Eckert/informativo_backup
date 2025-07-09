@@ -1,5 +1,6 @@
 package com.weg.informativos.modulos.usuario.dominio.cases;
 
+import com.weg.informativos.core.cases.UseCase;
 import com.weg.informativos.modulos.usuario.aplicacao.dtos.UsuarioCadastroDto;
 import com.weg.informativos.modulos.usuario.dominio.exceptions.EmailNaoUnicoException;
 import com.weg.informativos.modulos.usuario.aplicacao.exceptions.SenhaConfirmacaoDiferenteException;
@@ -9,7 +10,7 @@ import com.weg.informativos.modulos.usuario.dominio.enums.TipoUsuario;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UsuarioCadastroCase {
+public class UsuarioCadastroCase implements UseCase<UsuarioCadastroDto,Void> {
 
     private final UsuarioRepository usuarioRepository;
 
@@ -17,7 +18,8 @@ public class UsuarioCadastroCase {
         this.usuarioRepository = usuarioRepository;
     }
 
-    public void executar(UsuarioCadastroDto usuarioCadastroDto){
+    @Override
+    public Void executar(UsuarioCadastroDto usuarioCadastroDto){
         if(!verificarEmailUnico(usuarioCadastroDto.email())){
             throw new EmailNaoUnicoException("Email já usado");
         }
@@ -29,6 +31,8 @@ public class UsuarioCadastroCase {
         UsuarioEntidade usuario = dtoParaModelo(usuarioCadastroDto);
 
         usuarioRepository.save(usuario);
+
+        return null;
     }
 
     private boolean verificarEmailUnico(String email){
