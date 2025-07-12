@@ -4,7 +4,9 @@ import com.weg.informativos.modulos.usuario.aplicacao.repository.UsuarioReposito
 import com.weg.informativos.modulos.usuario.dominio.UsuarioEntidade;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 
     private final UsuarioRepository usuarioRepository;

@@ -34,4 +34,9 @@ public class UserDetailsImpl implements UserDetails {
         return usuario.getEmail();
     }
 
+    public UsuarioEntidade getUsuario(){
+        return this.usuario;
+    }
+
+
 }
